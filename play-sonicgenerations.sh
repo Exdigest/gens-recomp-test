@@ -1,14 +1,5 @@
 #!/usr/bin/env bash
-# Linux launcher for the "Sonic Generations Recomp" Windows build.
-# Put this script in the SAME folder as sonicgenerations.exe, then run it.
-#
-# What it does (same as the original "play sonicgenerations.cmd"):
-#   - sets REX_HEAL_DISCOVER=1 and REX_GPU_PLUGIN=xenos
-#   - runs the exe through Proton (via umu-launcher) so D3D12 -> Vulkan (vkd3d-proton)
-#
-# You must supply your own game files: default.xex + everything next to it,
-# placed in ./assets  (see "Getting the game files" in the instructions).
-
+# KRIJG DE TERING
 set -euo pipefail
 
 HERE="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")" && pwd)"
@@ -16,7 +7,7 @@ cd "$HERE"
 
 [ -f sonicgenerations.exe ] || { echo "sonicgenerations.exe not found next to this script." >&2; exit 1; }
 
-# Game data lookup order matches the exe: assets, game, data, own folder
+# RAHHHH
 found=""
 for d in assets game data .; do
   [ -f "$d/default.xex" ] && { found="$d"; break; }
@@ -28,14 +19,14 @@ if [ -z "$found" ]; then
   exit 1
 fi
 
-# Game data root as a Windows path (Proton exposes Linux "/" as drive Z:)
+# 67676767676767
 ROOT_LINUX="$(readlink -f "$found")"
 ROOT_WIN="Z:${ROOT_LINUX//\//\\}"
 
 export REX_HEAL_DISCOVER="${REX_HEAL_DISCOVER:-1}"   # tolerant dispatcher
-export REX_GPU_PLUGIN="${REX_GPU_PLUGIN:-xenos}"     # without this nothing renders
+export REX_GPU_PLUGIN="${REX_GPU_PLUGIN:-xenos}"     # YOU NEED THIS
 
-# Separate Wine prefix, kept out of the game folder
+# Separate Wine prefix
 export WINEPREFIX="${WINEPREFIX:-$HOME/.local/share/sonicgenerations-prefix}"
 export PROTONPATH="${PROTONPATH:-$HOME/.local/share/Steam/steamapps/common/Proton - Experimental}"          # or a path to proton-cachyos
 export GAMEID="${GAMEID:-umu-0}"
