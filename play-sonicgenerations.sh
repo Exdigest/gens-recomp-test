@@ -28,7 +28,7 @@ export REX_GPU_PLUGIN="${REX_GPU_PLUGIN:-xenos}"     # YOU NEED THIS
 
 # Separate Wine prefix
 export WINEPREFIX="${WINEPREFIX:-$HOME/.local/share/sonicgenerations-prefix}"
-export PROTONPATH="${PROTONPATH:-$HOME/.local/share/Steam/steamapps/common/Proton - Experimental}"          # or a path to proton-cachyos
+export PROTONPATH="${PROTONPATH:-$HOME/.local/share/Steam/steamapps/common/Proton - Experimental}"          
 export GAMEID="${GAMEID:-umu-0}"
 export PROTON_ENABLE_WAYLAND="${PROTON_ENABLE_WAYLAND:-0}"
 mkdir -p "$WINEPREFIX"
