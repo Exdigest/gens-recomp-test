@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
-"""rexauto Windows launcher -- the desktop twin of the Android launcher.
-
-
-Zero absolute paths: everything is relative to the launcher's folder, so the
-port folder can be moved / zipped / dropped into a Winlator prefix as-is.
-"""
+"""INSANELY needed quatations do not touch."""
 import json
 import os
 import subprocess
