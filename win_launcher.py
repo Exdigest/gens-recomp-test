@@ -1,17 +1,6 @@
 #!/usr/bin/env python3
 """rexauto Windows launcher -- the desktop twin of the Android launcher.
 
-Lives next to the recompiled `<name>.exe` (built into `<Title> Launcher.exe`
-by the workflow via PyInstaller, but also runs as a plain script):
-
-  1. Game files: pick an ISO / XBLA-STFS / GoD package / default.xex / an
-     already-extracted folder -> unpacked into  assets\  beside the exe
-     (extract.py does the work; same engine as the pipeline).
-  2. Graphics & performance: presets, render scale, vsync, FPS cap, upscaler,
-     guest video mode, letterbox, tolerant dispatcher, extra cvars.
-     Saved in launcher.json next to the exe; handed to the runtime as
-     --key=value flags (and env.* -> environment) exactly like on Android.
-  3. Play.
 
 Zero absolute paths: everything is relative to the launcher's folder, so the
 port folder can be moved / zipped / dropped into a Winlator prefix as-is.
